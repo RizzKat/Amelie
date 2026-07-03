@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --cream:#F7F0E4; --navy:#081F4D; --gold:#F1A014; --charcoal:#393939;
+    --navy-soft:#0d2a63; --line:#e3d9c6;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:var(--cream); }
+  body{
+    width:210mm; min-height:297mm; margin:0 auto;
+    font-family:"Helvetica Neue", Arial, sans-serif;
+    color:var(--charcoal); padding:16mm 15mm 12mm;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .head{ display:flex; align-items:center; gap:14px; border-bottom:2px solid var(--gold); padding-bottom:14px; }
+  .mark{ width:46px; height:64px; flex:none; }
+  .brand h1{ font-size:30px; letter-spacing:7px; color:var(--navy); font-weight:700; }
+  .brand .tag{ font-size:12px; letter-spacing:2px; color:var(--gold); margin-top:3px; text-transform:uppercase; }
+  .head .right{ margin-left:auto; text-align:right; font-size:10.5px; letter-spacing:1px; color:var(--navy); line-height:1.7; }
+
+  .lede{ margin:22px 0 6px; font-size:19px; line-height:1.5; color:var(--navy); font-weight:300; }
+  .lede b{ font-weight:700; }
+  .lede-it{ font-size:12px; color:#8a7f6a; font-style:italic; margin-bottom:20px; }
+
+  h2{ font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin:0 0 10px; }
+  .section{ margin-top:22px; }
+
+  .who{ display:grid; grid-template-columns:1fr 1fr; gap:8px 26px; }
+  .who div{ font-size:13px; padding-left:16px; position:relative; line-height:1.45; }
+  .who div:before{ content:""; position:absolute; left:0; top:6px; width:7px; height:7px; background:var(--navy); border-radius:50%; }
+
+  .steps{ display:flex; gap:0; margin-top:4px; }
+  .step{ flex:1; text-align:center; position:relative; padding:0 6px; }
+  .step .num{ width:38px; height:38px; margin:0 auto 8px; border-radius:50%; background:var(--navy); color:var(--cream);
+    display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; }
+  .step .t{ font-size:13px; font-weight:700; color:var(--navy); letter-spacing:.5px; }
+  .step .d{ font-size:10.5px; color:var(--charcoal); margin-top:3px; line-height:1.35; }
+  .step:not(:last-child):after{ content:"→"; position:absolute; right:-7px; top:9px; color:var(--gold); font-size:16px; }
+
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:22px; }
+  .get li, .why li{ list-style:none; font-size:12.5px; line-height:1.5; padding-left:18px; position:relative; margin-bottom:7px; }
+  .get li:before{ content:"✓"; position:absolute; left:0; color:var(--gold); font-weight:700; }
+  .why li:before{ content:"—"; position:absolute; left:0; color:var(--navy); }
+
+  .pricing{ margin-top:24px; background:var(--navy); color:var(--cream); border-radius:6px; padding:16px 22px;
+    display:flex; align-items:center; gap:24px; }
+  .pricing .p{ flex:1; }
+  .pricing .p .k{ font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+  .pricing .p .v{ font-size:15px; margin-top:2px; line-height:1.4; }
+  .pricing .divider{ width:1px; align-self:stretch; background:rgba(247,240,228,.25); }
+
+  .foot{ margin-top:auto; padding-top:16px; border-top:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:var(--navy); }
+  .foot b{ letter-spacing:1px; }
+  .foot .cta{ color:var(--gold); font-weight:700; letter-spacing:1px; }
+  .spacer{ flex:1 1 auto; }
+  .wrap{ display:flex; flex-direction:column; min-height:250mm; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <svg class="mark" viewBox="0 0 46 64" xmlns="http://www.w3.org/2000/svg">
+      <rect x="19" y="6" width="8" height="6" fill="#F1A014"/>
+      <path d="M18 12 h10 v3 h-10 z" fill="#081F4D"/>
+      <rect x="20.5" y="15" width="5" height="4" fill="#F1A014"/>
+      <path d="M17 19 L29 19 L33 58 L13 58 Z" fill="#081F4D"/>
+      <path d="M23 19 L23 58" stroke="#F7F0E4" stroke-width="1.2"/>
+      <rect x="11" y="58" width="24" height="4" rx="1" fill="#081F4D"/>
+    </svg>
+    <div class="brand">
+      <h1>FARO&nbsp;STUDIO</h1>
+      <div class="tag">Your beacon for AI</div>
+    </div>
+    <div class="right">Katherine (Kate) Kimball<br>Founder &amp; AI Advisor · Italy<br>English / Italiano</div>
+  </div>
+
+  <div class="lede">We help companies in Italy adopt AI <b>without the fear</b> — turning better processes into <b>real time and money saved</b>.</div>
+  <div class="lede-it">Aiutiamo le aziende in Italia ad adottare l'AI senza paura — trasformando processi migliori in tempo e denaro risparmiati.</div>
+
+  <div class="section">
+    <h2>Who it's for</h2>
+    <div class="who">
+      <div>Luxury houses &amp; premium brands protecting their craft while modernizing</div>
+      <div>American companies operating in Italy needing a bilingual, bicultural bridge</div>
+      <div>Ambitious small &amp; mid-size Italian companies ready to work smarter</div>
+      <div>Mission-driven non-profits that could genuinely benefit from AI</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>The AI Kickstart · a 4–6 week engagement</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div class="t">Discover</div><div class="d">Map your workflows &amp; find the highest-value AI opportunities</div></div>
+      <div class="step"><div class="num">2</div><div class="t">Prioritize</div><div class="d">A clear, costed roadmap — quick wins first, big bets flagged</div></div>
+      <div class="step"><div class="num">3</div><div class="t">Implement</div><div class="d">Put 1–2 wins live and train your team to run them</div></div>
+      <div class="step"><div class="num">4</div><div class="t">Embed</div><div class="d">Playbooks &amp; guardrails so adoption sticks after I leave</div></div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>What you get</h2>
+      <ul class="get">
+        <li>An AI opportunity map tailored to your business</li>
+        <li>A prioritized, costed adoption roadmap</li>
+        <li>1–2 working solutions already saving time</li>
+        <li>A confident, trained team — no fear, real momentum</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Why Kate</h2>
+      <ul class="why">
+        <li>Bilingual &amp; bicultural — English/Italian, both business cultures</li>
+        <li>20+ years in consulting, BI, research &amp; knowledge management</li>
+        <li>A finisher who implements, not just advises</li>
+        <li>Straight to the point — no fluff, no wasted time</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pricing">
+    <div class="p"><div class="k">Advisory &amp; training</div><div class="v">$800 / hour</div></div>
+    <div class="divider"></div>
+    <div class="p"><div class="k">Engagement retainer</div><div class="v">From $2,500 to start + a share of the improvements achieved</div></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot">
+    <div><b>Faro Studio</b> · Katherine (Kate) Kimball · farostudio.it</div>
+    <div class="cta">Ready to switch on the light? →&nbsp; kate@farostudio.it</div>
+  </div>
+</div>
+</body>
+</html>
