@@ -17,6 +17,19 @@ Jul 2026). `farostudio.com` and `faro.studio` are taken.
 AI, Faro Consulting Group, FARO Technologies). "Faro Studio" is more distinctive; still
 worth a proper trademark check in Italy/EU before printing anything.
 
+## Visual identity
+Logo: a minimalist navy lighthouse with a warm gold light, above the wordmark
+**FARO STUDIO** with a gold divider, on a cream background. Luxurious, timeless,
+not "techy." (Canva design: "Luxurious Logo Design for Faro Studio".)
+
+**Brand palette**
+| Role | Color | Hex |
+|------|-------|-----|
+| Background | Cream | `#F7F0E4` |
+| Primary | Midnight navy | `#081F4D` |
+| Accent | Gold / amber | `#F1A014` |
+| Text | Charcoal | `#393939` |
+
 ## Positioning statement (one-liner)
 **EN:** *Faro Studio helps companies in Italy adopt AI without the fear — turning
 better processes into real time and money saved.*
