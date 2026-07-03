@@ -17,6 +17,15 @@ Jul 2026). `farostudio.com` and `faro.studio` are taken.
 AI, Faro Consulting Group, FARO Technologies). "Faro Studio" is more distinctive; still
 worth a proper trademark check in Italy/EU before printing anything.
 
+## Positioning statement (one-liner)
+**EN:** *Faro Studio helps companies in Italy adopt AI without the fear — turning
+better processes into real time and money saved.*
+
+**IT:** *Faro Studio aiuta le aziende in Italia ad adottare l'AI senza paura —
+trasformando processi migliori in tempo e denaro risparmiati.*
+
+**Short tagline:** *Your beacon for AI.* / *Il tuo faro per l'AI.*
+
 ## The offer
 Help companies:
 - **Improve performance through better processes**
