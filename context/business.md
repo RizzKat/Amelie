@@ -5,7 +5,17 @@ An independent **AI consulting advisory based in Italy**, operating in English a
 Italian. Currently at **idea stage** — being built while I'm still employed at
 AlixPartners.
 
-**Name:** TBD (not chosen yet).
+**Name:** **Faro Studio** — *faro* is Italian for *lighthouse/beacon* (a guiding light
+that brings ships safely to harbor: AI adoption without the fear), and *studio* is the
+Italian term for a professional practice. Bilingual by design, and it reads the same
+way in both English and Italian.
+
+**Domains to secure:** `farostudio.it` and `farostudio.ai` (both available as of
+Jul 2026). `farostudio.com` and `faro.studio` are taken.
+
+**Trademark note:** "Faro" alone is crowded in the AI/consulting space (Farotech, Faros
+AI, Faro Consulting Group, FARO Technologies). "Faro Studio" is more distinctive; still
+worth a proper trademark check in Italy/EU before printing anything.
 
 ## The offer
 Help companies:

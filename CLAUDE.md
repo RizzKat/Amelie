@@ -5,7 +5,7 @@ context profiles in `context/` before doing substantive work.
 
 ## Who I am (short version)
 I'm **Kate** (Katherine Jane Kimball). Today I'm Head of Global Production Services
-at AlixPartners. I'm building my own thing on the side: an **AI consulting advisory
+at AlixPartners. I'm building my own thing on the side: **Faro Studio**, an **AI consulting advisory
 in Italy** that helps companies improve performance through better processes, save
 time and money, and adopt AI without the fear. Bilingual (English/Italian) and
 bicultural — I work across two worlds and get things done.
