@@ -1,263 +1,293 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conosci la FMD — Campagna Italiana sulla Displasia Fibromuscolare</title>
-  <meta name="description" content="Campagna di sensibilizzazione e advocacy sociale sulla Displasia Fibromuscolare (FMD) in Italia: conoscenza, riconoscimento e sostegno per pazienti e famiglie." />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --bg-alt: #f4f7fb;
-      --text: #1a2233;
-      --muted: #55617a;
-      --primary: #1f6feb;
-      --primary-dark: #1550b0;
-      --accent: #d64550;
-      --card: #ffffff;
-      --border: #e2e8f2;
-      --shadow: 0 6px 24px rgba(20,40,80,0.08);
-      --radius: 14px;
-      --maxw: 1080px;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1420; --bg-alt: #151c2b; --text: #e8edf6; --muted: #a4b0c8;
-        --primary: #5b9bff; --primary-dark: #3f7fe0; --accent: #ff6b76;
-        --card: #182130; --border: #26314a; --shadow: 0 6px 24px rgba(0,0,0,0.35);
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--primary); }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-    header.site {
-      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px);
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
-    .brand .dot { font-size: 1.3rem; }
-    .nav a.navlink { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: .95rem; }
-    .nav a.navlink:hover { color: var(--text); }
-    @media (max-width: 640px) { .nav a.navlink { display: none; } }
-
-    .hero { background: linear-gradient(160deg, var(--bg-alt), var(--bg)); padding: 72px 0 56px; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; margin: 0 0 16px; }
-    .hero .lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
-    .ribbon { display: inline-block; background: color-mix(in srgb, var(--accent) 14%, transparent);
-      color: var(--accent); font-weight: 600; font-size: .85rem; padding: 6px 14px; border-radius: 999px; margin-bottom: 20px; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-block; padding: 13px 24px; border-radius: 10px; font-weight: 600;
-      text-decoration: none; border: 1px solid transparent; transition: transform .1s ease; }
-    .btn:active { transform: translateY(1px); }
-    .btn-primary { background: var(--primary); color: #fff; }
-    .btn-primary:hover { background: var(--primary-dark); }
-    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
-
-    section { padding: 56px 0; }
-    section h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 8px; }
-    section .sub { color: var(--muted); margin: 0 0 32px; max-width: 640px; }
-
-    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 24px; box-shadow: var(--shadow); }
-    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
-    .card p { margin: 0; color: var(--muted); font-size: .97rem; }
-    .card .ic { font-size: 1.6rem; margin-bottom: 10px; }
-
-    .pillars { background: var(--bg-alt); }
-    .stat-row { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); }
-    .stat { text-align: center; }
-    .stat .num { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
-    .stat .lbl { color: var(--muted); font-size: .95rem; }
-
-    ul.sym { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
-    ul.sym li { background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-      padding: 12px 16px; }
-    ul.sym li::before { content: "•"; color: var(--accent); font-weight: 700; margin-right: 8px; }
-
-    .disclaimer { background: color-mix(in srgb, var(--accent) 8%, transparent);
-      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-      border-radius: var(--radius); padding: 18px 22px; color: var(--text); font-size: .95rem; }
-
-    .privacy-note { border-left: 4px solid var(--primary); padding: 12px 18px; background: var(--bg-alt);
-      border-radius: 0 10px 10px 0; color: var(--muted); font-size: .92rem; }
-
-    form.newsletter { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-    form.newsletter input[type=email] { flex: 1 1 240px; padding: 13px 16px; border-radius: 10px;
-      border: 1px solid var(--border); background: var(--card); color: var(--text); font-size: 1rem; }
-    .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: .9rem; color: var(--muted); }
-    .consent input { margin-top: 4px; }
-
-    footer.site { border-top: 1px solid var(--border); padding: 36px 0; color: var(--muted); font-size: .9rem; }
-    footer .cols { display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; }
-    footer a { color: var(--muted); }
-    .tags { color: var(--muted); font-size: .85rem; margin-top: 24px; }
-    .skip { position: absolute; left: -999px; }
-    .skip:focus { left: 12px; top: 12px; background: var(--primary); color:#fff; padding: 8px 12px; border-radius: 8px; z-index: 20; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conosci la FMD — Campagna Italiana sulla Displasia Fibromuscolare</title>
+<meta name="description" content="Campagna di sensibilizzazione sulla Displasia Fibromuscolare (FMD) in Italia. I documenti del kit sono scaricabili in PDF.">
 </head>
 <body>
-  <a href="#contenuto" class="skip">Salta al contenuto</a>
-  <header class="site">
-    <div class="wrap nav">
-      <div class="brand"><span class="dot">🎗️</span> Conosci la FMD</div>
-      <nav aria-label="Navigazione principale">
-        <a class="navlink" href="#cose">Cos'è</a>
-        <a class="navlink" href="#sintomi">Sintomi</a>
-        <a class="navlink" href="#obiettivi">Obiettivi</a>
-        <a class="navlink" href="#partecipa">Partecipa</a>
-        <a class="navlink" href="#privacy">Privacy</a>
-      </nav>
-    </div>
-  </header>
 
-  <main id="contenuto">
-    <section class="hero">
-      <div class="wrap">
-        <span class="ribbon">Advocacy sociale · Displasia Fibromuscolare</span>
-        <h1>La Displasia Fibromuscolare esiste, ha un nome e si può affrontare.</h1>
-        <p class="lead">Una campagna italiana per far conoscere la FMD, sostenere il suo riconoscimento
-          e offrire sostegno a chi ne è affetto e alle proprie famiglie. Più la conosciamo, prima la diagnostichiamo.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#partecipa">Sostieni la campagna</a>
-          <a class="btn btn-ghost" href="#cose">Scopri cos'è la FMD</a>
-        </div>
-      </div>
-    </section>
+<style>
+  :root{
+    --bg:#fbfcfd; --bg-alt:#eef4f5; --card:#ffffff; --text:#16202e; --muted:#5a6980;
+    --primary:#0d6e78; --primary-dark:#0a555d; --accent:#d3564e; --accent-soft:#fbeeec;
+    --border:#dde6ea; --shadow:0 8px 30px rgba(13,60,66,.08); --radius:16px; --maxw:1080px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0d1520; --bg-alt:#131f29; --card:#17232f; --text:#e7eef3; --muted:#9fb0bd;
+      --primary:#46b3bf; --primary-dark:#369aa5; --accent:#f0756c; --accent-soft:#2a1c1c;
+      --border:#25333f; --shadow:0 8px 30px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#fbfcfd; --bg-alt:#eef4f5; --card:#ffffff; --text:#16202e; --muted:#5a6980;
+    --primary:#0d6e78; --primary-dark:#0a555d; --accent:#d3564e; --accent-soft:#fbeeec;
+    --border:#dde6ea; --shadow:0 8px 30px rgba(13,60,66,.08);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d1520; --bg-alt:#131f29; --card:#17232f; --text:#e7eef3; --muted:#9fb0bd;
+    --primary:#46b3bf; --primary-dark:#369aa5; --accent:#f0756c; --accent-soft:#2a1c1c;
+    --border:#25333f; --shadow:0 8px 30px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;}
+  a{color:var(--primary);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+  header.site{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);
+    background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px;}
+  .brand .rib{color:var(--accent);font-size:1.25rem;}
+  .nav nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:.94rem;}
+  .nav nav a:hover{color:var(--text);}
+  @media(max-width:680px){.nav nav a{display:none;}}
 
-    <section id="cose">
-      <div class="wrap">
-        <h2>Che cos'è la FMD?</h2>
-        <p class="sub">La <strong>Displasia Fibromuscolare</strong> (Fibromuscular Dysplasia) è una malattia
-          delle arterie: la loro parete si deforma e il vaso può restringersi, dilatarsi o lacerarsi.
-          Non è causata dal colesterolo né da un'infiammazione. Colpisce soprattutto le donne adulte ed è
-          spesso poco conosciuta — e quindi diagnosticata in ritardo.</p>
-        <div class="grid">
-          <div class="card"><div class="ic">🩺</div><h3>Poco conosciuta</h3><p>Anche in ambito sanitario, il che porta a diagnosi tardive e percorsi di cura frammentati.</p></div>
-          <div class="card"><div class="ic">👩</div><h3>Soprattutto donne</h3><p>Interessa in prevalenza le donne adulte, ma può riguardare anche uomini e bambini.</p></div>
-          <div class="card"><div class="ic">🫀</div><h3>Gestibile</h3><p>Non ha una cura che la elimini, ma si gestisce bene: molte persone conducono una vita normale.</p></div>
-          <div class="card"><div class="ic">🇮🇹</div><h3>C'è un registro in Italia</h3><p>Dal 2017 esiste il Registro Italiano (ITA-FMD), integrato nel registro europeo.</p></div>
-        </div>
-      </div>
-    </section>
+  .hero{background:radial-gradient(120% 120% at 80% -10%,var(--bg-alt),var(--bg));
+    padding:82px 0 62px;}
+  .ribbon{display:inline-block;background:var(--accent-soft);color:var(--accent);
+    font-weight:600;font-size:.82rem;padding:6px 15px;border-radius:999px;margin-bottom:22px;
+    border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);line-height:1.08;margin:0 0 18px;
+    text-wrap:balance;letter-spacing:-.01em;}
+  .hero .lead{font-size:1.22rem;color:var(--muted);max-width:660px;margin:0 0 30px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{display:inline-block;padding:14px 26px;border-radius:11px;font-weight:600;
+    text-decoration:none;border:1px solid transparent;transition:transform .08s,background .2s;
+    cursor:pointer;font-size:1rem;}
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--primary);color:#fff;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--border);}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary);}
 
-    <section id="sintomi" class="pillars">
-      <div class="wrap">
-        <h2>Segnali da non ignorare</h2>
-        <p class="sub">Nessuno di questi sintomi, da solo, significa «FMD». Ma se sono presenti e inspiegati —
-          soprattutto in persone giovani — sono un buon motivo per parlarne col proprio medico.</p>
-        <ul class="sym">
-          <li>Pressione alta difficile da spiegare o in giovane età</li>
-          <li>Mal di testa persistenti</li>
-          <li>Acufene pulsante (fischio ritmico nell'orecchio)</li>
-          <li>Vertigini o disturbi visivi</li>
-          <li>Dolore al collo</li>
-          <li>In rari casi: aneurismi o dissecazioni arteriose</li>
-        </ul>
-        <p style="margin-top:24px" class="disclaimer">⚠️ <strong>Questo sito ha finalità divulgative e non
-          sostituisce il parere del medico.</strong> In presenza di sintomi o dubbi, rivolgiti al tuo medico
-          curante o a un centro di riferimento per la Displasia Fibromuscolare.</p>
-      </div>
-    </section>
+  section{padding:60px 0;}
+  section h2{font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 10px;text-wrap:balance;}
+  section .sub{color:var(--muted);margin:0 0 34px;max-width:680px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:700;
+    color:var(--accent);margin:0 0 8px;}
 
-    <section id="obiettivi">
-      <div class="wrap">
-        <h2>I nostri obiettivi</h2>
-        <p class="sub">Ci ispiriamo alla Fibromuscular Dysplasia Society of America (FMDSA), che negli Stati Uniti
-          ha promosso un registro nazionale, ispirato centri clinici di riferimento e finanziato la ricerca.</p>
-        <div class="grid">
-          <div class="card"><h3>1. Conoscenza</h3><p>Spiegare cos'è la FMD in modo semplice e corretto, a cittadini e medici di base.</p></div>
-          <div class="card"><h3>2. Riconoscimento</h3><p>Sostenere tutele, esenzioni e percorsi dedicati nel quadro italiano delle malattie rare.</p></div>
-          <div class="card"><h3>3. Sostegno</h3><p>Costruire una comunità di informazione e ascolto per pazienti e famiglie, per ritrovare serenità.</p></div>
-        </div>
-        <div class="stat-row" style="margin-top:36px">
-          <div class="stat"><div class="num">2003</div><div class="lbl">Anno di nascita della FMDSA (modello USA)</div></div>
-          <div class="stat"><div class="num">5.000+</div><div class="lbl">Pazienti nel registro nordamericano</div></div>
-          <div class="stat"><div class="num">2017</div><div class="lbl">Avvio del Registro Italiano (ITA-FMD)</div></div>
-        </div>
-      </div>
-    </section>
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:26px;box-shadow:var(--shadow);}
+  .card .ic{font-size:1.5rem;margin-bottom:12px;}
+  .card h3{margin:0 0 8px;font-size:1.12rem;}
+  .card p{margin:0;color:var(--muted);font-size:.96rem;}
 
-    <section id="partecipa" class="pillars">
-      <div class="wrap">
-        <h2>Partecipa</h2>
-        <p class="sub">Bastano piccoli gesti per fare una grande differenza.</p>
-        <div class="grid">
-          <div class="card"><div class="ic">📣</div><h3>Condividi</h3><p>Usa <strong>#ConosciLaFMD</strong> e aiuta a far conoscere la malattia.</p></div>
-          <div class="card"><div class="ic">💬</div><h3>Parlane col medico</h3><p>Una domanda al momento giusto può cambiare una diagnosi.</p></div>
-          <div class="card"><div class="ic">🤝</div><h3>Diventa volontario/a</h3><p>Sostieni la campagna come ambasciatore o ambasciatrice.</p></div>
-        </div>
+  .alt{background:var(--bg-alt);}
+  ul.sym{list-style:none;padding:0;margin:0;display:grid;gap:11px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  ul.sym li{background:var(--card);border:1px solid var(--border);border-radius:11px;
+    padding:14px 16px;font-size:.97rem;}
+  ul.sym li b{color:var(--accent);margin-right:6px;}
 
-        <div class="card" style="margin-top:28px">
-          <h3>Resta in contatto</h3>
-          <p>Ricevi informazioni affidabili sulla FMD e aggiornamenti sulla campagna. Tratteremo i tuoi dati
-             solo per questa finalità e solo con il tuo consenso. Potrai cancellarti quando vuoi.</p>
-          <!-- NOTA: collega questo form a una piattaforma conforme al GDPR con doppio opt-in. -->
-          <form class="newsletter" action="#" method="post" onsubmit="return false;">
-            <label for="email" class="skip">Indirizzo e-mail</label>
-            <input id="email" type="email" name="email" placeholder="La tua e-mail" required />
-            <button class="btn btn-primary" type="submit">Iscriviti</button>
-          </form>
-          <label class="consent">
-            <input type="checkbox" required />
-            <span>Ho letto l'<a href="#privacy">Informativa Privacy</a> e acconsento a ricevere la newsletter
-              della campagna. Non inserire dati sulla tua salute in questo modulo.</span>
-          </label>
-        </div>
-      </div>
-    </section>
+  .disclaimer{background:var(--accent-soft);
+    border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);
+    border-radius:var(--radius);padding:18px 22px;font-size:.95rem;}
+  .stat-row{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-top:38px;}
+  .stat{text-align:center;background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);padding:22px 14px;}
+  .stat .num{font-size:2.3rem;font-weight:800;color:var(--primary);
+    font-variant-numeric:tabular-nums;font-family:Georgia,serif;}
+  .stat .lbl{color:var(--muted);font-size:.9rem;margin-top:4px;}
 
-    <section id="privacy">
-      <div class="wrap">
-        <h2>La tua privacy è la nostra priorità</h2>
-        <p class="sub">Questa è un'iniziativa di advocacy sociale. Trattiamo i dati personali nel pieno rispetto
-          del Regolamento (UE) 2016/679 (GDPR).</p>
-        <div class="privacy-note">
-          <p style="margin:0 0 10px"><strong>Privacy by design e by default.</strong> Raccogliamo solo i dati
-            necessari, per finalità dichiarate, con il tuo consenso. I dati relativi alla salute sono «categorie
-            particolari» (Art. 9 GDPR) e li trattiamo solo con consenso esplicito: non te li chiediamo mai per
-            iscriverti o contattarci.</p>
-          <p style="margin:0">Hai diritto di accedere, rettificare, cancellare, limitare, opporti e revocare il
-            consenso in ogni momento, oltre al diritto di reclamo al
-            <a href="https://www.garanteprivacy.it/" target="_blank" rel="noopener">Garante per la protezione dei dati</a>.
-            Trovi tutti i dettagli nell'Informativa Privacy completa.</p>
-        </div>
-        <p style="margin-top:20px">
-          <a class="btn btn-ghost" href="../privacy/informativa-privacy.md">Leggi l'Informativa Privacy</a>
-        </p>
-      </div>
-    </section>
-  </main>
+  form.nl{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+  form.nl input{flex:1 1 240px;padding:14px 16px;border-radius:11px;border:1px solid var(--border);
+    background:var(--bg);color:var(--text);font-size:1rem;}
+  form.nl input:focus{outline:2px solid var(--primary);outline-offset:1px;}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:.9rem;color:var(--muted);}
+  .consent input{margin-top:4px;}
 
-  <footer class="site">
+  .kit{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+  .kit .item{display:flex;gap:12px;align-items:flex-start;background:var(--card);
+    border:1px solid var(--border);border-radius:12px;padding:16px 18px;
+    text-decoration:none;color:inherit;transition:border-color .15s,transform .08s,box-shadow .15s;position:relative;}
+  a.item:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow);}
+  a.item:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}
+  a.item:active{transform:translateY(0);}
+  .kit .item .n{font-family:Georgia,serif;font-weight:700;color:var(--primary);font-size:1.05rem;
+    min-width:26px;}
+  .kit .item .body{flex:1;}
+  .kit .item .body b{display:block;font-size:.98rem;}
+  .kit .item .body span{color:var(--muted);font-size:.88rem;}
+  .kit .item .dl{align-self:center;font-size:.72rem;font-weight:700;letter-spacing:.04em;
+    color:var(--primary);border:1px solid color-mix(in srgb,var(--primary) 40%,transparent);
+    border-radius:999px;padding:4px 9px;white-space:nowrap;}
+  a.item:hover .dl{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .kitbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:26px;}
+
+  footer.site{border-top:1px solid var(--border);padding:40px 0;color:var(--muted);font-size:.9rem;}
+  footer .cols{display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;}
+  .tags{color:var(--muted);font-size:.85rem;margin-top:22px;letter-spacing:.02em;}
+  .skip{position:absolute;left:-999px;}
+  .skip:focus{left:14px;top:14px;background:var(--primary);color:#fff;padding:8px 12px;border-radius:8px;z-index:30;}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+
+<a href="#contenuto" class="skip">Salta al contenuto</a>
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand"><span class="rib">🎗️</span> Conosci la FMD</div>
+    <nav aria-label="Navigazione principale">
+      <a href="#cose">Cos'è</a>
+      <a href="#sintomi">Sintomi</a>
+      <a href="#obiettivi">Obiettivi</a>
+      <a href="#kit">Il kit</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto">
+  <section class="hero">
     <div class="wrap">
-      <div class="cols">
-        <div>
-          <div class="brand" style="margin-bottom:8px"><span class="dot">🎗️</span> Conosci la FMD</div>
-          <div>Campagna italiana di sensibilizzazione sulla Displasia Fibromuscolare.</div>
-          <div style="margin-top:8px">Promossa da <strong>[Nome associazione]</strong> · [email] · [città]</div>
-        </div>
-        <div>
-          <div><strong>Risorse</strong></div>
-          <div><a href="../campagna/03-scheda-informativa-FMD.md">Scheda informativa</a></div>
-          <div><a href="../campagna/07-domande-frequenti.md">Domande frequenti</a></div>
-          <div><a href="../campagna/08-risorse-e-riferimenti.md">Riferimenti e centri</a></div>
-          <div><a href="../privacy/informativa-privacy.md">Informativa Privacy</a></div>
-        </div>
+      <span class="ribbon">Advocacy sociale · Displasia Fibromuscolare</span>
+      <h1 class="serif">La Displasia Fibromuscolare esiste, ha un nome e si può affrontare.</h1>
+      <p class="lead">Una campagna italiana per far conoscere la FMD, sostenerne il riconoscimento
+        e offrire sostegno a chi ne è affetto e alle proprie famiglie. Più la conosciamo, prima la diagnostichiamo.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#kit">Sostieni la campagna</a>
+        <a class="btn btn-ghost" href="#cose">Scopri cos'è la FMD</a>
       </div>
-      <p class="disclaimer" style="margin-top:28px">Iniziativa di advocacy <strong>indipendente</strong>. I
-        riferimenti alla Fibromuscular Dysplasia Society of America (FMDSA), al Registro Italiano ITA-FMD e ad
-        altri enti sono a scopo informativo e non implicano affiliazione o approvazione, salvo accordi formali.
-        I contenuti non sostituiscono il parere medico.</p>
-      <p class="tags">#ConosciLaFMD · #DisplasiaFibromuscolare · #FMDItalia</p>
     </div>
-  </footer>
+  </section>
+
+  <section id="cose">
+    <div class="wrap">
+      <p class="eyebrow">Che cos'è</p>
+      <h2 class="serif">Una malattia delle arterie, ancora troppo poco conosciuta</h2>
+      <p class="sub">La <strong>Displasia Fibromuscolare</strong> (Fibromuscular Dysplasia, FMD) fa sì che la
+        parete di alcune arterie si deformi: il vaso può restringersi, dilatarsi o lacerarsi. Non dipende dal
+        colesterolo né da un'infiammazione. Colpisce soprattutto le donne adulte — ed è spesso diagnosticata in ritardo.</p>
+      <div class="grid">
+        <div class="card"><div class="ic">🩺</div><h3>Poco riconosciuta</h3><p>Anche in ambito sanitario: da qui diagnosi tardive e percorsi di cura frammentati.</p></div>
+        <div class="card"><div class="ic">👩</div><h3>Soprattutto donne</h3><p>Interessa in prevalenza le donne adulte, ma può riguardare anche uomini e bambini.</p></div>
+        <div class="card"><div class="ic">🫀</div><h3>Gestibile</h3><p>Non esiste una cura che la elimini, ma si gestisce bene: molte persone conducono una vita normale.</p></div>
+        <div class="card"><div class="ic">🇮🇹</div><h3>C'è un registro in Italia</h3><p>Dal 2017 è attivo il Registro Italiano (ITA-FMD), integrato nel registro europeo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sintomi" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">Segnali</p>
+      <h2 class="serif">Quando parlarne col medico</h2>
+      <p class="sub">Nessuno di questi sintomi, da solo, significa «FMD». Ma se sono presenti e inspiegati —
+        soprattutto in persone giovani — sono un buon motivo per chiedere un parere medico.</p>
+      <ul class="sym">
+        <li><b>•</b>Pressione alta difficile da spiegare o in giovane età</li>
+        <li><b>•</b>Mal di testa persistenti</li>
+        <li><b>•</b>Acufene pulsante (fischio ritmico nell'orecchio)</li>
+        <li><b>•</b>Vertigini o disturbi visivi</li>
+        <li><b>•</b>Dolore al collo</li>
+        <li><b>•</b>In rari casi: aneurismi o dissecazioni arteriose</li>
+      </ul>
+      <p class="disclaimer" style="margin-top:26px">⚠️ <strong>Questo sito ha finalità divulgative e non
+        sostituisce il parere del medico.</strong> In presenza di sintomi o dubbi, rivolgiti al tuo medico
+        curante o a un centro di riferimento per la Displasia Fibromuscolare.</p>
+    </div>
+  </section>
+
+  <section id="obiettivi">
+    <div class="wrap">
+      <p class="eyebrow">La nostra missione</p>
+      <h2 class="serif">Conoscenza, riconoscimento, sostegno</h2>
+      <p class="sub">Ci ispiriamo alla Fibromuscular Dysplasia Society of America (FMDSA), che negli Stati Uniti
+        ha promosso un registro nazionale, ispirato centri clinici di riferimento e finanziato la ricerca.</p>
+      <div class="grid">
+        <div class="card"><h3 class="serif">Conoscenza</h3><p>Spiegare cos'è la FMD in modo semplice e corretto, a cittadini e medici di base.</p></div>
+        <div class="card"><h3 class="serif">Riconoscimento</h3><p>Sostenere tutele, esenzioni e percorsi dedicati nel quadro italiano delle malattie rare.</p></div>
+        <div class="card"><h3 class="serif">Sostegno</h3><p>Una comunità di informazione e ascolto per pazienti e famiglie, per ritrovare serenità.</p></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">2003</div><div class="lbl">Nascita della FMDSA (modello USA)</div></div>
+        <div class="stat"><div class="num">5.000+</div><div class="lbl">Pazienti nel registro nordamericano</div></div>
+        <div class="stat"><div class="num">2017</div><div class="lbl">Avvio del Registro Italiano ITA-FMD</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kit" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">Materiali pronti</p>
+      <h2 class="serif">Il kit della campagna</h2>
+      <p class="sub">Un insieme completo di materiali in italiano, pensato per essere adattato e diffuso —
+        e sviluppato nel pieno rispetto del GDPR. <strong>Clicca su un documento per scaricarlo in PDF.</strong></p>
+      <div class="kitbar">
+        <a class="btn btn-primary" href="deliverables/Conosci-la-FMD-Kit-completo.pdf" download="Conosci-la-FMD-Kit-completo.pdf">↓ Scarica il kit completo (PDF)</a><span style="color:var(--muted);font-size:.9rem">Kit completo (tutti i documenti) · 35 pagine</span>
+      </div>
+      <div class="kit">
+        <a class="item" href="deliverables/00-Panoramica.pdf" download="00-Panoramica.pdf"><span class="n">00</span><span class="body"><b>Panoramica</b><span>README della campagna</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/01-Strategia.pdf" download="01-Strategia.pdf"><span class="n">01</span><span class="body"><b>Strategia</b><span>Pubblici, canali, calendario, KPI</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/02-Messaggi-chiave.pdf" download="02-Messaggi-chiave.pdf"><span class="n">02</span><span class="body"><b>Messaggi chiave</b><span>Slogan, disclaimer, hashtag</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/03-Scheda-informativa-FMD.pdf" download="03-Scheda-informativa-FMD.pdf"><span class="n">03</span><span class="body"><b>Scheda informativa FMD</b><span>Divulgativa, da validare</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/04-Social-media.pdf" download="04-Social-media.pdf"><span class="n">04</span><span class="body"><b>Piano social</b><span>Calendario + 10 post pronti</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/05-Comunicato-stampa.pdf" download="05-Comunicato-stampa.pdf"><span class="n">05</span><span class="body"><b>Comunicato stampa</b><span>Modello per i media</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/06-Lettera-istituzioni.pdf" download="06-Lettera-istituzioni.pdf"><span class="n">06</span><span class="body"><b>Lettera alle istituzioni</b><span>Per ASL, Regioni, enti</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/07-Domande-frequenti.pdf" download="07-Domande-frequenti.pdf"><span class="n">07</span><span class="body"><b>Domande frequenti</b><span>Per pazienti e familiari</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/08-Risorse-riferimenti.pdf" download="08-Risorse-riferimenti.pdf"><span class="n">08</span><span class="body"><b>Risorse e riferimenti</b><span>Fonti, centri, link ufficiali</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/09-Privacy-Informativa-GDPR.pdf" download="09-Privacy-Informativa-GDPR.pdf"><span class="n">09</span><span class="body"><b>Privacy · Informativa GDPR</b><span>Artt. 13/14, dati sanitari, diritti</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/10-Privacy-Consensi.pdf" download="10-Privacy-Consensi.pdf"><span class="n">10</span><span class="body"><b>Privacy · Moduli di consenso</b><span>Newsletter, salute, liberatorie</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/11-Privacy-Linee-guida.pdf" download="11-Privacy-Linee-guida.pdf"><span class="n">11</span><span class="body"><b>Privacy · Linee guida dati</b><span>Regole operative per volontari</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/12-Assistenza.pdf" download="12-Assistenza.pdf"><span class="n">12</span><span class="body"><b>Assistenza e sostegno</b><span>Pagina di orientamento pazienti</span></span><span class="dl">↓ PDF</span></a>
+      </div>
+
+      <div class="card" style="margin-top:30px">
+        <h3 class="serif">Resta in contatto</h3>
+        <p style="color:var(--muted);margin:6px 0 0">Ricevi informazioni affidabili sulla FMD e aggiornamenti sulla
+          campagna. Tratteremo i tuoi dati solo per questa finalità e solo con il tuo consenso. Potrai cancellarti quando vuoi.</p>
+        <form class="nl" onsubmit="return false;">
+          <label for="email" class="skip">Indirizzo e-mail</label>
+          <input id="email" type="email" placeholder="La tua e-mail" required>
+          <button class="btn btn-primary" type="submit">Iscriviti</button>
+        </form>
+        <label class="consent">
+          <input type="checkbox" required>
+          <span>Ho letto l'Informativa Privacy e acconsento a ricevere la newsletter della campagna.
+            Non inserire dati sulla tua salute in questo modulo.</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <p class="eyebrow">Priorità</p>
+      <h2 class="serif">La tua privacy è la nostra priorità</h2>
+      <p class="sub">Questa è un'iniziativa di advocacy sociale. Trattiamo i dati personali nel pieno rispetto
+        del Regolamento (UE) 2016/679 (GDPR).</p>
+      <div class="grid">
+        <div class="card"><div class="ic">🧭</div><h3>Privacy by design</h3><p>Raccogliamo solo i dati necessari, per finalità dichiarate, con il tuo consenso.</p></div>
+        <div class="card"><div class="ic">🩹</div><h3>Dati sanitari protetti</h3><p>Categorie particolari (Art. 9): trattati solo con consenso esplicito. Non te li chiediamo mai per iscriverti.</p></div>
+        <div class="card"><div class="ic">⚖️</div><h3>I tuoi diritti</h3><p>Accesso, rettifica, cancellazione, revoca del consenso e reclamo al Garante, in ogni momento.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div style="max-width:340px">
+        <div class="brand" style="margin-bottom:8px"><span class="rib">🎗️</span> Conosci la FMD</div>
+        <div>Campagna italiana di sensibilizzazione sulla Displasia Fibromuscolare.</div>
+        <div style="margin-top:8px">Promossa da <strong>[Nome associazione]</strong> · [email] · [città]</div>
+      </div>
+      <div>
+        <div style="color:var(--text);font-weight:600;margin-bottom:6px">Hashtag</div>
+        <div>#ConosciLaFMD</div><div>#DisplasiaFibromuscolare</div><div>#FMDItalia</div>
+      </div>
+    </div>
+    <p class="disclaimer" style="margin-top:30px">Iniziativa di advocacy <strong>indipendente</strong>. I riferimenti
+      alla Fibromuscular Dysplasia Society of America (FMDSA), al Registro Italiano ITA-FMD e ad altri enti sono a scopo
+      informativo e non implicano affiliazione o approvazione, salvo accordi formali. I contenuti non sostituiscono il parere medico.</p>
+    <p class="tags">#ConosciLaFMD · #DisplasiaFibromuscolare · #FMDItalia</p>
+  </div>
+</footer>
+
 </body>
 </html>
