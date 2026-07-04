@@ -1,0 +1,5 @@
+# Netlify configuration for the "Conosci la FMD" campaign site.
+# The site is a static site living in the sito/ folder (index.html +
+# deliverables/ PDFs + assets/). No build step is required.
+[build]
+  publish = "sito"

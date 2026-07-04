@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conosci la FMD — Campagna Italiana sulla Displasia Fibromuscolare</title>
+<meta name="description" content="Campagna di sensibilizzazione sulla Displasia Fibromuscolare (FMD) in Italia. I documenti del kit sono scaricabili in PDF.">
+</head>
+<body>
+
+<style>
+  :root{
+    --bg:#fbfcfc; --surface:#f4efe7; --surface-2:#eef4f3; --card:#ffffff;
+    --ink:#17282b; --muted:#5c6b6d; --hair:#e4e7e2;
+    --primary:#0e6b74; --primary-600:#0a555d; --primary-050:#e6f1f1;
+    --accent:#cf6a55; --accent-050:#f9ede8;
+    --shadow-sm:0 1px 2px rgba(20,45,48,.05),0 2px 6px rgba(20,45,48,.05);
+    --shadow-md:0 8px 22px rgba(16,72,78,.08),0 2px 6px rgba(16,72,78,.05);
+    --shadow-lg:0 22px 60px rgba(16,72,78,.14);
+    --radius:18px; --radius-sm:12px; --maxw:1120px;
+    --serif:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0c1417; --surface:#141d1f; --surface-2:#101b1d; --card:#15211f;
+      --ink:#e9efee; --muted:#9fb0b0; --hair:#243130;
+      --primary:#4cb8bf; --primary-600:#39a0a7; --primary-050:#16302f;
+      --accent:#e88871; --accent-050:#2a1c19;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 10px 26px rgba(0,0,0,.4);
+      --shadow-lg:0 24px 60px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#fbfcfc; --surface:#f4efe7; --surface-2:#eef4f3; --card:#ffffff;
+    --ink:#17282b; --muted:#5c6b6d; --hair:#e4e7e2;
+    --primary:#0e6b74; --primary-600:#0a555d; --primary-050:#e6f1f1;
+    --accent:#cf6a55; --accent-050:#f9ede8;
+    --shadow-md:0 8px 22px rgba(16,72,78,.08),0 2px 6px rgba(16,72,78,.05);
+    --shadow-lg:0 22px 60px rgba(16,72,78,.14);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0c1417; --surface:#141d1f; --surface-2:#101b1d; --card:#15211f;
+    --ink:#e9efee; --muted:#9fb0b0; --hair:#243130;
+    --primary:#4cb8bf; --primary-600:#39a0a7; --primary-050:#16302f;
+    --accent:#e88871; --accent-050:#2a1c19;
+    --shadow-md:0 10px 26px rgba(0,0,0,.4); --shadow-lg:0 24px 60px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  .serif{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;}
+  a{color:var(--primary);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  /* ---------- header ---------- */
+  header.site{position:sticky;top:0;z-index:30;border-bottom:1px solid transparent;
+    background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);
+    transition:border-color .3s;}
+  header.site.scrolled{border-color:var(--hair);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
+  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;}
+  .logo-mk{width:42px;height:42px;flex:none;filter:drop-shadow(0 2px 5px rgba(16,72,78,.18));}
+  .logo-wm{display:flex;flex-direction:column;line-height:1.02;}
+  .logo-wm .l1{font-family:var(--serif);font-size:1.22rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);}
+  .logo-wm .l1 b{color:var(--primary);font-weight:800;}
+  .logo-wm .l2{font-family:var(--sans);font-size:.58rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.2em;color:var(--muted);margin-top:5px;}
+  .brand:focus-visible{outline:2px solid var(--primary);outline-offset:4px;border-radius:8px;}
+  .nav nav a{color:var(--muted);text-decoration:none;margin-left:26px;font-size:.93rem;
+    font-weight:500;transition:color .2s;}
+  .nav nav a:hover{color:var(--ink);}
+  @media(max-width:760px){.nav nav a{display:none;}}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:12px;
+    font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;font-size:1rem;
+    transition:transform .12s ease,box-shadow .2s,background .2s,border-color .2s;font-family:var(--sans);}
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--primary);color:#fff;box-shadow:var(--shadow-md);}
+  .btn-primary:hover{background:var(--primary-600);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+  .btn-ghost{background:var(--card);color:var(--ink);border-color:var(--hair);box-shadow:var(--shadow-sm);}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px);}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:96px 0 40px;isolation:isolate;}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(60% 55% at 82% 6%,var(--accent-050),transparent 70%),
+      radial-gradient(70% 60% at 8% 0%,var(--primary-050),transparent 72%);}
+  .beads-bg{position:absolute;top:-40px;right:-60px;width:620px;max-width:80%;z-index:-1;
+    opacity:.5;pointer-events:none;color:var(--primary);}
+  @media(prefers-color-scheme:dark){.beads-bg{opacity:.35;}}
+  .kicker{display:inline-flex;align-items:center;gap:9px;background:var(--card);
+    border:1px solid var(--hair);color:var(--primary);font-weight:600;font-size:.8rem;
+    padding:7px 14px 7px 10px;border-radius:999px;margin-bottom:24px;box-shadow:var(--shadow-sm);
+    letter-spacing:.02em;}
+  .kicker .rib{color:var(--accent);font-size:1rem;}
+  .hero h1{font-size:clamp(2.25rem,5.4vw,3.7rem);line-height:1.06;margin:0 0 20px;
+    max-width:15ch;text-wrap:balance;}
+  .hero .lead{font-size:clamp(1.08rem,2.2vw,1.28rem);color:var(--muted);max-width:60ch;margin:0 0 32px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:38px;padding-top:26px;
+    border-top:1px solid var(--hair);}
+  .trust .t{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:.9rem;font-weight:500;}
+  .trust .t svg{color:var(--primary);flex:none;}
+
+  /* ---------- beads divider ---------- */
+  .divider{display:block;width:100%;height:38px;color:var(--primary);opacity:.55;margin:0;}
+
+  /* ---------- sections ---------- */
+  section{padding:64px 0;position:relative;}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;
+    letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 14px;}
+  .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--accent);display:inline-block;}
+  h2.title{font-size:clamp(1.7rem,3.2vw,2.35rem);margin:0 0 12px;max-width:20ch;text-wrap:balance;line-height:1.14;}
+  .sub{color:var(--muted);margin:0 0 40px;max-width:65ch;font-size:1.05rem;}
+
+  .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+  .card{background:var(--card);border:1px solid var(--hair);border-radius:var(--radius);
+    padding:30px 28px;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .2s,border-color .2s;
+    position:relative;overflow:hidden;}
+  .card.lift:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:color-mix(in srgb,var(--primary) 35%,var(--hair));}
+  .ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:18px;
+    background:var(--primary-050);color:var(--primary);}
+  .ico.warm{background:var(--accent-050);color:var(--accent);}
+  .card h3{margin:0 0 8px;font-size:1.16rem;font-family:var(--serif);letter-spacing:-.01em;}
+  .card p{margin:0;color:var(--muted);font-size:.98rem;}
+
+  .alt{background:var(--surface-2);}
+  .warm-sec{background:var(--surface);}
+
+  /* symptoms */
+  ul.sym{list-style:none;padding:0;margin:0;display:grid;gap:12px;
+    grid-template-columns:repeat(auto-fit,minmax(255px,1fr));}
+  ul.sym li{display:flex;gap:12px;align-items:flex-start;background:var(--card);
+    border:1px solid var(--hair);border-radius:var(--radius-sm);padding:16px 18px;font-size:1rem;
+    box-shadow:var(--shadow-sm);}
+  ul.sym li .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:8px;flex:none;
+    box-shadow:0 0 0 4px var(--accent-050);}
+  .note{display:flex;gap:16px;align-items:flex-start;background:var(--accent-050);
+    border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);border-radius:var(--radius);
+    padding:22px 24px;margin-top:30px;}
+  .note svg{color:var(--accent);flex:none;margin-top:2px;}
+  .note p{margin:0;font-size:.98rem;}
+
+  /* reassurance band */
+  .reassure{background:linear-gradient(135deg,var(--primary),var(--primary-600));color:#fff;
+    text-align:center;padding:76px 0;position:relative;overflow:hidden;}
+  .reassure .beads-band{position:absolute;left:0;right:0;bottom:0;width:100%;opacity:.22;color:#fff;}
+  .reassure .q{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.28;
+    max-width:20ch;margin:0 auto;text-wrap:balance;font-weight:600;}
+  .reassure .who{margin-top:22px;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;
+    opacity:.82;font-weight:600;}
+
+  /* stats */
+  .stat-row{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:44px;
+    border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;background:var(--card);
+    box-shadow:var(--shadow-sm);}
+  .stat{padding:30px 22px;text-align:center;border-right:1px solid var(--hair);}
+  .stat:last-child{border-right:none;}
+  @media(max-width:620px){.stat{border-right:none;border-bottom:1px solid var(--hair);}.stat:last-child{border-bottom:none;}}
+  .stat .num{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--primary);
+    font-variant-numeric:tabular-nums;line-height:1;}
+  .stat .lbl{color:var(--muted);font-size:.9rem;margin-top:10px;}
+
+  /* kit */
+  .kitbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:30px;
+    padding:22px 24px;background:var(--card);border:1px solid var(--hair);border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);}
+  .kitbar .meta{color:var(--muted);font-size:.92rem;}
+  .kit{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));}
+  a.item{display:flex;gap:14px;align-items:center;background:var(--card);text-decoration:none;color:inherit;
+    border:1px solid var(--hair);border-radius:var(--radius-sm);padding:16px 18px;box-shadow:var(--shadow-sm);
+    transition:transform .14s,box-shadow .2s,border-color .2s;}
+  a.item:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow-md);}
+  a.item:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}
+  a.item .n{font-family:var(--serif);font-weight:700;color:var(--primary);font-size:1rem;min-width:30px;
+    height:30px;border-radius:8px;background:var(--primary-050);display:grid;place-items:center;flex:none;font-size:.9rem;}
+  a.item .body{flex:1;min-width:0;}
+  a.item .body b{display:block;font-size:1rem;font-weight:600;}
+  a.item .body span{color:var(--muted);font-size:.86rem;}
+  a.item .dl{flex:none;display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;
+    letter-spacing:.04em;color:var(--primary);border:1px solid color-mix(in srgb,var(--primary) 38%,transparent);
+    border-radius:999px;padding:5px 10px;white-space:nowrap;transition:background .2s,color .2s;}
+  a.item:hover .dl{background:var(--primary);color:#fff;border-color:var(--primary);}
+
+  /* newsletter */
+  .signup{margin-top:34px;background:var(--card);border:1px solid var(--hair);border-radius:var(--radius);
+    padding:32px 30px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
+  .signup h3{font-family:var(--serif);font-size:1.3rem;margin:0 0 6px;}
+  form.nl{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+  form.nl input{flex:1 1 250px;padding:14px 16px;border-radius:12px;border:1px solid var(--hair);
+    background:var(--bg);color:var(--ink);font-size:1rem;font-family:var(--sans);}
+  form.nl input:focus{outline:2px solid var(--primary);outline-offset:1px;border-color:var(--primary);}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin-top:16px;font-size:.9rem;color:var(--muted);}
+  .consent input{margin-top:4px;accent-color:var(--primary);}
+
+  /* footer */
+  footer.site{border-top:1px solid var(--hair);padding:56px 0 40px;color:var(--muted);font-size:.92rem;
+    background:var(--surface-2);}
+  footer .cols{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;}
+  footer .brand{color:var(--ink);margin-bottom:12px;}
+  footer .fh{color:var(--ink);font-weight:600;margin-bottom:8px;}
+  footer .disclaimer{margin-top:34px;padding:18px 22px;background:var(--accent-050);
+    border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:var(--radius);
+    font-size:.9rem;color:var(--ink);}
+  .tags{margin-top:20px;letter-spacing:.03em;font-size:.85rem;}
+
+  .skip{position:absolute;left:-999px;}
+  .skip:focus{left:16px;top:16px;background:var(--primary);color:#fff;padding:9px 14px;border-radius:9px;z-index:40;}
+
+  /* motion */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important;scroll-behavior:auto!important;}
+    .reveal{opacity:1;transform:none;}
+  }
+</style>
+
+<a href="#contenuto" class="skip">Salta al contenuto</a>
+<header class="site" id="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#contenuto" aria-label="FMD Italia — vai all'inizio">
+      <svg class="logo-mk" viewBox="0 0 44 44" fill="none" role="img" aria-label="FMD Italia">
+        <defs><linearGradient id="fmdg-h" x1="6" y1="6" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#1a8791"/><stop offset="1" stop-color="#0a555d"/></linearGradient></defs>
+        <rect x="1" y="1" width="42" height="42" rx="12.5" fill="url(#fmdg-h)"/>
+        <path d="M9 29 Q19 10 35 16" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+        <circle cx="9" cy="29" r="2.4" fill="#ffffff"/>
+        <circle cx="14.4" cy="21" r="3" fill="#ffffff"/>
+        <circle cx="20.5" cy="16.3" r="3.6" fill="#ffffff"/>
+        <circle cx="27.4" cy="14.6" r="4.3" fill="#ef9a83"/>
+        <circle cx="35" cy="16" r="2.6" fill="#ffffff"/>
+      </svg>
+      <span class="logo-wm"><span class="l1"><b>FMD</b> Italia</span><span class="l2">Displasia Fibromuscolare</span></span>
+    </a>
+    <nav aria-label="Navigazione principale">
+      <a href="#cose">Cos'è</a>
+      <a href="#sintomi">Sintomi</a>
+      <a href="#obiettivi">Missione</a>
+      <a href="#kit">Il kit</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto">
+  <section class="hero">
+    <svg class="beads-bg" viewBox="0 0 600 220" fill="none" aria-hidden="true">
+      <path d="M10,150 C120,60 200,60 300,110 S 480,150 590,70" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".5"/>
+      <circle cx="40" cy="128" r="5" fill="currentColor" opacity=".5"/>
+      <circle cx="95" cy="96" r="8" fill="currentColor" opacity=".55"/>
+      <circle cx="150" cy="80" r="6" fill="currentColor" opacity=".5"/>
+      <circle cx="210" cy="82" r="10" fill="currentColor" opacity=".6"/>
+      <circle cx="270" cy="100" r="6" fill="currentColor" opacity=".5"/>
+      <circle cx="330" cy="120" r="9" fill="currentColor" opacity=".55"/>
+      <circle cx="395" cy="132" r="6" fill="currentColor" opacity=".5"/>
+      <circle cx="455" cy="130" r="10" fill="currentColor" opacity=".6"/>
+      <circle cx="515" cy="112" r="6" fill="currentColor" opacity=".5"/>
+      <circle cx="565" cy="88" r="8" fill="currentColor" opacity=".55"/>
+    </svg>
+    <div class="wrap">
+      <span class="kicker"><span class="rib">🎗️</span> Advocacy sociale · Displasia Fibromuscolare</span>
+      <h1 class="serif">La FMD esiste, ha un nome e si può affrontare.</h1>
+      <p class="lead">Una campagna italiana per far conoscere la Displasia Fibromuscolare, sostenerne il
+        riconoscimento e stare accanto a chi ne è affetto e alle proprie famiglie. Più la conosciamo,
+        prima la diagnostichiamo.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="deliverables/Conosci-la-FMD-Kit-completo.pdf" download="Conosci-la-FMD-Kit-completo.pdf">↓ Scarica il kit completo (PDF)</a><a class="btn btn-ghost" href="#kit">Sfoglia i singoli documenti</a>
+      </div>
+      <div class="trust">
+        <span class="t"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg> Conforme al GDPR</span>
+        <span class="t"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v5h5"/></svg> Fonti verificate</span>
+        <span class="t"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8.5a5.5 5.5 0 00-9.5-3.8A5.5 5.5 0 004 8.5C4 14 12 20 12 20s8-6 8-11.5z"/></svg> Vicinanza a pazienti e famiglie</span>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider wrap" viewBox="0 0 1120 40" preserveAspectRatio="none" fill="none" aria-hidden="true">
+    <path d="M0,20 C 180,4 300,36 460,22 S 760,4 920,24 1120,20 1120,20" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
+    <g fill="currentColor">
+      <circle cx="140" cy="17" r="3.5" opacity=".45"/><circle cx="300" cy="27" r="5" opacity=".55"/>
+      <circle cx="460" cy="22" r="3.5" opacity=".45"/><circle cx="620" cy="14" r="5.5" opacity=".6"/>
+      <circle cx="780" cy="12" r="3.5" opacity=".45"/><circle cx="920" cy="24" r="5" opacity=".55"/>
+    </g>
+  </svg>
+
+  <section id="cose">
+    <div class="wrap">
+      <p class="eyebrow reveal">Che cos'è</p>
+      <h2 class="title serif reveal">Una malattia delle arterie, ancora troppo poco conosciuta</h2>
+      <p class="sub reveal">La <strong>Displasia Fibromuscolare</strong> (Fibromuscular Dysplasia, FMD) fa sì
+        che la parete di alcune arterie si deformi: il vaso può restringersi, dilatarsi o lacerarsi. Non dipende
+        dal colesterolo né da un'infiammazione. Colpisce soprattutto le donne adulte — ed è spesso diagnosticata in ritardo.</p>
+      <div class="grid">
+        <div class="card lift reveal"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Poco riconosciuta</h3><p>Anche in ambito sanitario: da qui diagnosi tardive e percorsi di cura frammentati.</p></div>
+        <div class="card lift reveal"><div class="ico warm"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M12 11v9M9 17h6"/></svg></div><h3>Soprattutto donne</h3><p>Interessa in prevalenza le donne adulte, ma può riguardare anche uomini e bambini.</p></div>
+        <div class="card lift reveal"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 00-8.8-1.2A5 5 0 003.2 5.6C1.5 8.5 3 12 6 14.5l6 5.5 6-5.5c3-2.5 4.5-6 2.8-8.9z"/><path d="M3 12h4l2-3 2 5 2-4 1 2h5"/></svg></div><h3>Gestibile</h3><p>Non esiste una cura che la elimini, ma si gestisce bene: molte persone conducono una vita normale.</p></div>
+        <div class="card lift reveal"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>C'è un registro in Italia</h3><p>Dal 2017 è attivo il Registro Italiano (ITA-FMD), integrato nel registro europeo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sintomi" class="alt">
+    <div class="wrap">
+      <p class="eyebrow reveal">Segnali</p>
+      <h2 class="title serif reveal">Quando parlarne con il medico</h2>
+      <p class="sub reveal">Nessuno di questi sintomi, da solo, significa «FMD». Ma se sono presenti e inspiegati
+        — soprattutto in persone giovani — sono un buon motivo per chiedere un parere medico.</p>
+      <ul class="sym reveal">
+        <li><span class="dot"></span>Pressione alta difficile da spiegare o in giovane età</li>
+        <li><span class="dot"></span>Mal di testa persistenti</li>
+        <li><span class="dot"></span>Acufene pulsante (fischio ritmico nell'orecchio)</li>
+        <li><span class="dot"></span>Vertigini o disturbi visivi</li>
+        <li><span class="dot"></span>Dolore al collo</li>
+        <li><span class="dot"></span>In rari casi: aneurismi o dissecazioni arteriose</li>
+      </ul>
+      <div class="note reveal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>
+        <p><strong>Questo sito ha finalità divulgative e non sostituisce il parere del medico.</strong>
+          In presenza di sintomi o dubbi, rivolgiti al tuo medico curante o a un centro di riferimento per la Displasia Fibromuscolare.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reassure">
+    <svg class="beads-band" viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" aria-hidden="true">
+      <path d="M0,40 C 200,14 360,54 540,36 S 900,14 1080,40 1200,36 1200,36" stroke="currentColor" stroke-width="1.4"/>
+      <g fill="currentColor"><circle cx="180" cy="30" r="4"/><circle cx="360" cy="46" r="6"/><circle cx="540" cy="36" r="4"/><circle cx="720" cy="20" r="6"/><circle cx="900" cy="22" r="4"/><circle cx="1080" cy="40" r="6"/></g>
+    </svg>
+    <div class="wrap reveal">
+      <p class="q">«Dare un nome a ciò che si prova è il primo passo verso la serenità — per chi convive con la FMD e per chi gli sta accanto.»</p>
+      <p class="who">Il senso della nostra campagna</p>
+    </div>
+  </section>
+
+  <section id="obiettivi">
+    <div class="wrap">
+      <p class="eyebrow reveal">La nostra missione</p>
+      <h2 class="title serif reveal">Conoscenza, riconoscimento, sostegno</h2>
+      <p class="sub reveal">Ci ispiriamo alla Fibromuscular Dysplasia Society of America (FMDSA), che negli
+        Stati Uniti ha promosso un registro nazionale, ispirato centri clinici di riferimento e finanziato la ricerca.</p>
+      <div class="grid">
+        <div class="card lift reveal"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/><circle cx="12" cy="12" r="3.5"/></svg></div><h3>Conoscenza</h3><p>Spiegare cos'è la FMD in modo semplice e corretto, a cittadini e medici di base.</p></div>
+        <div class="card lift reveal"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4a1 1 0 011-1h9l-1.5 3L14 9H6"/><path d="M4 21h4"/></svg></div><h3>Riconoscimento</h3><p>Sostenere tutele, esenzioni e percorsi dedicati nel quadro italiano delle malattie rare.</p></div>
+        <div class="card lift reveal"><div class="ico warm"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20a5 5 0 00-10 0"/><circle cx="12" cy="9" r="3.2"/><path d="M4.5 20a3.5 3.5 0 013.2-3.5M19.5 20a3.5 3.5 0 00-3.2-3.5"/></svg></div><h3>Sostegno</h3><p>Una comunità di informazione e ascolto per pazienti e famiglie, per ritrovare serenità.</p></div>
+      </div>
+      <div class="stat-row reveal">
+        <div class="stat"><div class="num">2003</div><div class="lbl">Nascita della FMDSA (modello USA)</div></div>
+        <div class="stat"><div class="num">5.000+</div><div class="lbl">Pazienti nel registro nordamericano</div></div>
+        <div class="stat"><div class="num">2017</div><div class="lbl">Avvio del Registro Italiano ITA-FMD</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kit" class="warm-sec">
+    <div class="wrap">
+      <p class="eyebrow reveal">Materiali pronti</p>
+      <h2 class="title serif reveal">Il kit della campagna</h2>
+      <p class="sub reveal">Un insieme completo di materiali in italiano, pensato per essere adattato e diffuso
+        — e sviluppato nel pieno rispetto del GDPR. <strong>Clicca su un documento per scaricarlo in PDF.</strong></p>
+      <div class="kitbar reveal">
+        <a class="btn btn-primary" href="deliverables/Conosci-la-FMD-Kit-completo.pdf" download="Conosci-la-FMD-Kit-completo.pdf">↓ Scarica il kit completo (PDF)</a><span style="color:var(--muted);font-size:.9rem">Kit completo (tutti i documenti) · 35 pagine</span>
+      </div>
+      <div class="kit reveal">
+        <a class="item" href="deliverables/00-Panoramica.pdf" download="00-Panoramica.pdf"><span class="n">00</span><span class="body"><b>Panoramica</b><span>README della campagna</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/01-Strategia.pdf" download="01-Strategia.pdf"><span class="n">01</span><span class="body"><b>Strategia</b><span>Pubblici, canali, calendario, KPI</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/02-Messaggi-chiave.pdf" download="02-Messaggi-chiave.pdf"><span class="n">02</span><span class="body"><b>Messaggi chiave</b><span>Slogan, disclaimer, hashtag</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/03-Scheda-informativa-FMD.pdf" download="03-Scheda-informativa-FMD.pdf"><span class="n">03</span><span class="body"><b>Scheda informativa FMD</b><span>Divulgativa, da validare</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/04-Social-media.pdf" download="04-Social-media.pdf"><span class="n">04</span><span class="body"><b>Piano social</b><span>Calendario + 10 post pronti</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/05-Comunicato-stampa.pdf" download="05-Comunicato-stampa.pdf"><span class="n">05</span><span class="body"><b>Comunicato stampa</b><span>Modello per i media</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/06-Lettera-istituzioni.pdf" download="06-Lettera-istituzioni.pdf"><span class="n">06</span><span class="body"><b>Lettera alle istituzioni</b><span>Per ASL, Regioni, enti</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/07-Domande-frequenti.pdf" download="07-Domande-frequenti.pdf"><span class="n">07</span><span class="body"><b>Domande frequenti</b><span>Per pazienti e familiari</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/08-Risorse-riferimenti.pdf" download="08-Risorse-riferimenti.pdf"><span class="n">08</span><span class="body"><b>Risorse e riferimenti</b><span>Fonti, centri, link ufficiali</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/09-Privacy-Informativa-GDPR.pdf" download="09-Privacy-Informativa-GDPR.pdf"><span class="n">09</span><span class="body"><b>Privacy · Informativa GDPR</b><span>Artt. 13/14, dati sanitari, diritti</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/10-Privacy-Consensi.pdf" download="10-Privacy-Consensi.pdf"><span class="n">10</span><span class="body"><b>Privacy · Moduli di consenso</b><span>Newsletter, salute, liberatorie</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/11-Privacy-Linee-guida.pdf" download="11-Privacy-Linee-guida.pdf"><span class="n">11</span><span class="body"><b>Privacy · Linee guida dati</b><span>Regole operative per volontari</span></span><span class="dl">↓ PDF</span></a>
+        <a class="item" href="deliverables/12-Assistenza.pdf" download="12-Assistenza.pdf"><span class="n">12</span><span class="body"><b>Assistenza e sostegno</b><span>Pagina di orientamento pazienti</span></span><span class="dl">↓ PDF</span></a>
+      </div>
+
+      <div class="signup reveal">
+        <h3 class="serif">Resta in contatto</h3>
+        <p style="color:var(--muted);margin:6px 0 0">Ricevi informazioni affidabili sulla FMD e aggiornamenti sulla
+          campagna. Tratteremo i tuoi dati solo per questa finalità e solo con il tuo consenso. Potrai cancellarti quando vuoi.</p>
+        <form class="nl" onsubmit="return false;">
+          <label for="email" class="skip">Indirizzo e-mail</label>
+          <input id="email" type="email" placeholder="La tua e-mail" required>
+          <button class="btn btn-primary" type="submit">Iscriviti</button>
+        </form>
+        <label class="consent">
+          <input type="checkbox" required>
+          <span>Ho letto l'Informativa Privacy e acconsento a ricevere la newsletter della campagna.
+            Non inserire dati sulla tua salute in questo modulo.</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <p class="eyebrow reveal">Priorità</p>
+      <h2 class="title serif reveal">La tua privacy è la nostra priorità</h2>
+      <p class="sub reveal">Questa è un'iniziativa di advocacy sociale. Trattiamo i dati personali nel pieno
+        rispetto del Regolamento (UE) 2016/679 (GDPR).</p>
+      <div class="grid">
+        <div class="card lift reveal"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Privacy by design</h3><p>Raccogliamo solo i dati necessari, per finalità dichiarate, con il tuo consenso.</p></div>
+        <div class="card lift reveal"><div class="ico warm"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div><h3>Dati sanitari protetti</h3><p>Categorie particolari (Art. 9): trattati solo con consenso esplicito. Non te li chiediamo mai per iscriverti.</p></div>
+        <div class="card lift reveal"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 7h12M6 7l-3 6a3 3 0 006 0zM18 7l-3 6a3 3 0 006 0z"/></svg></div><h3>I tuoi diritti</h3><p>Accesso, rettifica, cancellazione, revoca del consenso e reclamo al Garante, in ogni momento.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div style="max-width:360px">
+        <div class="brand" style="margin-bottom:14px">
+          <svg class="logo-mk" viewBox="0 0 44 44" fill="none" role="img" aria-label="FMD Italia">
+            <defs><linearGradient id="fmdg-f" x1="6" y1="6" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1a8791"/><stop offset="1" stop-color="#0a555d"/></linearGradient></defs>
+            <rect x="1" y="1" width="42" height="42" rx="12.5" fill="url(#fmdg-f)"/>
+            <path d="M9 29 Q19 10 35 16" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+            <circle cx="9" cy="29" r="2.4" fill="#ffffff"/>
+            <circle cx="14.4" cy="21" r="3" fill="#ffffff"/>
+            <circle cx="20.5" cy="16.3" r="3.6" fill="#ffffff"/>
+            <circle cx="27.4" cy="14.6" r="4.3" fill="#ef9a83"/>
+            <circle cx="35" cy="16" r="2.6" fill="#ffffff"/>
+          </svg>
+          <span class="logo-wm"><span class="l1"><b>FMD</b> Italia</span><span class="l2">Displasia Fibromuscolare</span></span>
+        </div>
+        <div>Campagna italiana di sensibilizzazione sulla Displasia Fibromuscolare.</div>
+        <div style="margin-top:10px">Promossa da <strong>[Nome associazione]</strong> · [email] · [città]</div>
+      </div>
+      <div>
+        <div class="fh">Naviga</div>
+        <div><a href="#cose" style="color:var(--muted)">Cos'è la FMD</a></div>
+        <div><a href="#sintomi" style="color:var(--muted)">Sintomi</a></div>
+        <div><a href="#kit" style="color:var(--muted)">Il kit</a></div>
+        <div><a href="#privacy" style="color:var(--muted)">Privacy</a></div>
+      </div>
+      <div>
+        <div class="fh">Hashtag</div>
+        <div>#ConosciLaFMD</div><div>#DisplasiaFibromuscolare</div><div>#FMDItalia</div>
+      </div>
+    </div>
+    <p class="disclaimer">Iniziativa di advocacy <strong>indipendente</strong>. I riferimenti alla Fibromuscular
+      Dysplasia Society of America (FMDSA), al Registro Italiano ITA-FMD e ad altri enti sono a scopo informativo e
+      non implicano affiliazione o approvazione, salvo accordi formali. I contenuti non sostituiscono il parere medico.</p>
+    <p class="tags">#ConosciLaFMD · #DisplasiaFibromuscolare · #FMDItalia</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var bar=document.getElementById('topbar');
+    var onScroll=function(){ if(bar) bar.classList.toggle('scrolled', window.scrollY>8); };
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els=document.querySelectorAll('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+
+</body>
+</html>
