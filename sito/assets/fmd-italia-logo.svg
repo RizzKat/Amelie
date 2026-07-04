@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" width="300" height="64">
+  <g transform="translate(0,11)"><defs><linearGradient id="gl" x1="6" y1="6" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#1a8791"/><stop offset="1" stop-color="#0a555d"/></linearGradient></defs>
+  <rect x="1" y="1" width="42" height="42" rx="12.5" fill="url(#gl)"/>
+  <path d="M9 29 Q19 10 35 16" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+  <circle cx="9" cy="29" r="2.4" fill="#ffffff"/>
+  <circle cx="14.4" cy="21" r="3" fill="#ffffff"/>
+  <circle cx="20.5" cy="16.3" r="3.6" fill="#ffffff"/>
+  <circle cx="27.4" cy="14.6" r="4.3" fill="#ef9a83"/>
+  <circle cx="35" cy="16" r="2.6" fill="#ffffff"/></g>
+  <text x="60" y="30" font-family="Georgia, 'DejaVu Serif', 'Times New Roman', serif" font-size="26" font-weight="700">
+    <tspan fill="#0e6b74" font-weight="800">FMD</tspan><tspan fill="#17282b"> Italia</tspan></text>
+  <text x="61" y="47" font-family="'DejaVu Sans', system-ui, Arial, sans-serif" font-size="8.5" font-weight="700"
+    letter-spacing="3.1" fill="#5c6b6d">DISPLASIA FIBROMUSCOLARE</text>
+</svg>

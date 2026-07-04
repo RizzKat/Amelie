@@ -60,10 +60,14 @@
     transition:border-color .3s;}
   header.site.scrolled{border-color:var(--hair);}
   .nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.1px;font-size:1.04rem;}
-  .brand .mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
-    background:linear-gradient(150deg,var(--primary),var(--primary-600));color:#fff;
-    box-shadow:var(--shadow-sm);font-size:1rem;}
+  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;}
+  .logo-mk{width:42px;height:42px;flex:none;filter:drop-shadow(0 2px 5px rgba(16,72,78,.18));}
+  .logo-wm{display:flex;flex-direction:column;line-height:1.02;}
+  .logo-wm .l1{font-family:var(--serif);font-size:1.22rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);}
+  .logo-wm .l1 b{color:var(--primary);font-weight:800;}
+  .logo-wm .l2{font-family:var(--sans);font-size:.58rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.2em;color:var(--muted);margin-top:5px;}
+  .brand:focus-visible{outline:2px solid var(--primary);outline-offset:4px;border-radius:8px;}
   .nav nav a{color:var(--muted);text-decoration:none;margin-left:26px;font-size:.93rem;
     font-weight:500;transition:color .2s;}
   .nav nav a:hover{color:var(--ink);}
@@ -219,7 +223,20 @@
 <a href="#contenuto" class="skip">Salta al contenuto</a>
 <header class="site" id="topbar">
   <div class="wrap nav">
-    <div class="brand"><span class="mark">🎗️</span> Conosci la FMD</div>
+    <a class="brand" href="#contenuto" aria-label="FMD Italia — vai all'inizio">
+      <svg class="logo-mk" viewBox="0 0 44 44" fill="none" role="img" aria-label="FMD Italia">
+        <defs><linearGradient id="fmdg-h" x1="6" y1="6" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#1a8791"/><stop offset="1" stop-color="#0a555d"/></linearGradient></defs>
+        <rect x="1" y="1" width="42" height="42" rx="12.5" fill="url(#fmdg-h)"/>
+        <path d="M9 29 Q19 10 35 16" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+        <circle cx="9" cy="29" r="2.4" fill="#ffffff"/>
+        <circle cx="14.4" cy="21" r="3" fill="#ffffff"/>
+        <circle cx="20.5" cy="16.3" r="3.6" fill="#ffffff"/>
+        <circle cx="27.4" cy="14.6" r="4.3" fill="#ef9a83"/>
+        <circle cx="35" cy="16" r="2.6" fill="#ffffff"/>
+      </svg>
+      <span class="logo-wm"><span class="l1"><b>FMD</b> Italia</span><span class="l2">Displasia Fibromuscolare</span></span>
+    </a>
     <nav aria-label="Navigazione principale">
       <a href="#cose">Cos'è</a>
       <a href="#sintomi">Sintomi</a>
@@ -401,8 +418,20 @@
   <div class="wrap">
     <div class="cols">
       <div style="max-width:360px">
-        <div class="brand" style="display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.04rem">
-          <span class="mark" style="width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(150deg,var(--primary),var(--primary-600));color:#fff">🎗️</span> Conosci la FMD</div>
+        <div class="brand" style="margin-bottom:14px">
+          <svg class="logo-mk" viewBox="0 0 44 44" fill="none" role="img" aria-label="FMD Italia">
+            <defs><linearGradient id="fmdg-f" x1="6" y1="6" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1a8791"/><stop offset="1" stop-color="#0a555d"/></linearGradient></defs>
+            <rect x="1" y="1" width="42" height="42" rx="12.5" fill="url(#fmdg-f)"/>
+            <path d="M9 29 Q19 10 35 16" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+            <circle cx="9" cy="29" r="2.4" fill="#ffffff"/>
+            <circle cx="14.4" cy="21" r="3" fill="#ffffff"/>
+            <circle cx="20.5" cy="16.3" r="3.6" fill="#ffffff"/>
+            <circle cx="27.4" cy="14.6" r="4.3" fill="#ef9a83"/>
+            <circle cx="35" cy="16" r="2.6" fill="#ffffff"/>
+          </svg>
+          <span class="logo-wm"><span class="l1"><b>FMD</b> Italia</span><span class="l2">Displasia Fibromuscolare</span></span>
+        </div>
         <div>Campagna italiana di sensibilizzazione sulla Displasia Fibromuscolare.</div>
         <div style="margin-top:10px">Promossa da <strong>[Nome associazione]</strong> · [email] · [città]</div>
       </div>
